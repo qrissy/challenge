@@ -21,30 +21,24 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        Next = (ImageButton) findViewById(R.id.imageBtNext);
-        Prev = (ImageButton) findViewById(R.id.imageBtPrev);
-        display = (TextView) findViewById(R.id.text);
+        Next = findViewById(R.id.imageBtNext);
+        Prev = findViewById(R.id.imageBtPrev);
+        display = findViewById(R.id.text);
 
 
-        Next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(DetailActivity.this, NextDetailActivity.class));
-                //Intent i = new Intent(DetailActivity.this, NextDetailActivity.class);
-                //startActivity(i);
-                Animatoo.animateZoom(DetailActivity.this);
-            }
+        Next.setOnClickListener(view -> {
+            startActivity(new Intent(DetailActivity.this, NextDetailActivity.class));
+            //Intent i = new Intent(DetailActivity.this, NextDetailActivity.class);
+            //startActivity(i);
+            Animatoo.animateZoom(DetailActivity.this);
         });
 
 
-        Prev.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(DetailActivity.this, NextDetailActivity.class));
-                //Intent i = new Intent(DetailActivity.this, NextDetailActivity.class);
-                //startActivity(i);
-                Animatoo.animateSplit(DetailActivity.this);
-            }
+        Prev.setOnClickListener(view -> {
+            startActivity(new Intent(DetailActivity.this, NextDetailActivity.class));
+            //Intent i = new Intent(DetailActivity.this, NextDetailActivity.class);
+            //startActivity(i);
+            Animatoo.animateSplit(DetailActivity.this);
         });
     }
 
